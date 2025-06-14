@@ -12,16 +12,16 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.6;
 }
 
 header {
-  background: #222;
+  background: linear-gradient(135deg, #222, #444);
   color: #fff;
-  /*padding: 2rem;*/
+  padding: 1.5rem 1rem;
   text-align: center;
 }
 
@@ -29,52 +29,193 @@ nav {
   background: #fff;
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   padding: 1rem;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  overscroll-behavior-y: scroll;
+  /*position: sticky;*/
+  /*top: 0;*/
+  z-index: 100;
 }
 
 nav a {
   color: #333;
   text-decoration: none;
   font-weight: bold;
+  padding: 0.5rem;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #F44336;
 }
 
 section {
-  padding: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+  font-size: 1.8rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #F44336, #FFC107);
+  margin: 0.5rem auto 0;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
 .gallery img {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  transition: transform 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 footer {
-  background: #222;
+  background: linear-gradient(135deg, #222, #444);
   color: #fff;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 2rem;
 }
 
-img{border: 1px solid #ccc; border-radius: 8px;}
+img {
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+.header-title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: 0.5rem;
+}
+
+.header-title a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-highlight {
+  background-color: #F44336;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.header-subtitle {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  margin: 0.5rem 0;
+}
+
+.contact-link {
+  color: #9bff27;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #00BCD4;
+}
+
+.phone-number {
+  color: #00BCD4;
+}
+
+.whatsapp-icon {
+  fill: #fff;
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #F44336;
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 99;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  nav {
+    gap: 0.5rem;
+    padding: 0.8rem;
+  }
+  
+  nav a {
+    font-size: 0.9rem;
+    padding: 0.3rem;
+  }
+  
+  section {
+    padding: 1.5rem 0.8rem;
+  }
+  
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 1.3rem;
+  }
+  
+  nav {
+    justify-content: space-around;
+  }
+  
+  nav a {
+    font-size: 0.8rem;
+  }
+  
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
   </style>
 </head>
 <body>
@@ -118,7 +259,7 @@ img{border: 1px solid #ccc; border-radius: 8px;}
     <a href="#varkari">वारकरी</a>
     <!-- <a href="#लग्न व्हिडिओ">लग्न व्हिडिओ</a> -->
   </nav>
-
+<main>
   <section id="wedding">
     <h2>लग्न पत्रिका</h2>
     <div class="gallery">
@@ -224,7 +365,8 @@ img{border: 1px solid #ccc; border-radius: 8px;}
       <img src="dohale_jevan/img1.jpg" alt="लग्न व्हिडिओ">
     </div>
   </section> -->
-
+</main>
+<a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
   <footer>
     <p>© 2025 चैतन्य - Graphic Designer</p>
   </footer>
@@ -261,5 +403,47 @@ img{border: 1px solid #ccc; border-radius: 8px;}
     }
   });
 </script>
+  <script>
+    // Back to top button functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // Lazy loading for images
+    if ('loading' in HTMLImageElement.prototype) {
+      // Native lazy loading is supported
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      lazyImages.forEach(img => {
+        img.src = img.dataset.src;
+      });
+    } else {
+      // Fallback for browsers that don't support native lazy loading
+      const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src;
+            imageObserver.unobserve(img);
+          }
+        });
+      });
+      
+      lazyImages.forEach(img => {
+        imageObserver.observe(img);
+      });
+    }
+  </script>
 </body>
 </html>
