@@ -114,6 +114,7 @@ img{border: 1px solid #ccc; border-radius: 8px;}
     <a href="#school">शाळेसाठी बॅनर्स</a>
     <a href="#chabina">छबिना</a>
     <a href="#dohale_jevan">डोहाळे जेवण</a>
+    <a href="#varkari">वारकरी</a>
     <!-- <a href="#लग्न व्हिडिओ">लग्न व्हिडिओ</a> -->
   </nav>
 
@@ -170,7 +171,7 @@ img{border: 1px solid #ccc; border-radius: 8px;}
     </div>
   </section>
 
- <!--  <section id="jayanti">
+  <section id="jayanti">
     <h2>जयंती</h2>
     <div class="gallery">
       <img src="jayanti/img1.jpg" alt="जयंती">
@@ -207,7 +208,14 @@ img{border: 1px solid #ccc; border-radius: 8px;}
     <div class="gallery">
       <img src="dohale_jevan/img1.jpg" alt="डोहाळे जेवण Banner">
     </div>
-  </section> -->
+  </section> 
+
+   <section id="varkari">
+    <h2>वारकरी</h2>
+    <div class="gallery">
+      <img src="varkari/img1.jpg" alt="वारकरी Banner">
+    </div>
+  </section> 
 
    <!-- <section id="लग्न व्हिडिओ">
     <h2>लग्न व्हिडिओ</h2>
@@ -223,12 +231,13 @@ img{border: 1px solid #ccc; border-radius: 8px;}
   document.addEventListener("DOMContentLoaded", function () {
     const imageLimits = {
       wedding: 4,
-      birthday: 4,
-      hardik_shubhechha: 4,
-      // jayanti: 4,
-      // school: 4,
-      // chabina: 4,
-      // dohale_jevan: 4
+      birthday: 2,
+      hardik_shubhechha: 2,
+      jayanti: 2,
+      school: 2,
+      chabina: 2,
+      dohale_jevan: 2,
+      varkari: 2
     };
     for (const [sectionId, limit] of Object.entries(imageLimits)) {
       const section = document.getElementById(sectionId);
